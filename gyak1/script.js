@@ -56,3 +56,83 @@ function lnko (a, b)
     }
     return b;
 }
+
+function lkkt(a, b)
+{
+    let x = a;
+    let y = b;
+
+    while (x !== y)
+    {
+        if ( x<y)
+        {
+            x += a;
+        }
+        else
+        {
+            y += b;
+        }
+    }
+
+    return x;
+}
+
+function factorial(n)
+{
+    let result = 1;
+
+    for (let i = 2; i <= n; i++)
+    {
+        result *= i;
+    }
+
+    return result;
+}
+
+function factorial2(n)
+{
+    let result = 1;
+    while (n > 1)
+    {
+        result *= n;
+        n--;
+    }
+    return result;
+ }
+
+ function randomArray(min, max, count)
+ {
+    let arr = [];
+    for (var i = 0; i < count; i++)
+    {
+        arr.push(Math.floor(Math.random() * (max -min +1)) + min);
+    }
+    return arr;
+ }
+
+
+ function asd(a)
+ {
+    return ;
+    a;
+ }
+
+ let xy = randomArray(1, 10, 4).filter((number) => number > 5)
+ .filter((number) => number % 2 === 0);
+
+ console.log(randomArray(1, 10, 10).findIndex((number) => number > 5));
+
+
+
+ console.log(randomArray(1, 10, 10).every((number) => number > 0));
+
+ function isMatrixAllEven(matrix)
+ {
+    return matrix.every(row => row.every(element => element % 2 === 0));
+ }
+
+
+ function nonZeroRowsCount(matrix)
+ {
+    return matrix.filter(row => row.every(element => element !== 0)).length;
+ }
