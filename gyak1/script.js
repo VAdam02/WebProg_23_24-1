@@ -136,3 +136,44 @@ function factorial2(n)
  {
     return matrix.filter(row => row.every(element => element !== 0)).length;
  }
+
+ class Product
+ {
+    constructor(name, manufacturer, sku, price, quantity)
+    {
+        this.name = name;
+        this.manufacturer = manufacturer;
+        this.sku = sku;
+        this.price = price;
+        this.quantity = quantity;
+    }
+ }
+class Warehouse
+{
+    constructor()
+    {
+        this.stock = [];
+    }
+
+    add(product)
+    {
+        this.stock.push(product);
+    }
+
+    get()
+    {
+        return this.stock.map(product => product.name).join("\n") + "\n";
+    }
+
+    getLeastProduct()
+    {
+        return this.stock.reduce((least, product) => product.quantity < least.quantity ? product : least, this.stock[0]).name;
+    }
+}
+
+let warehouse = new Warehouse();
+warehouse.add(new Product("alma", "alma kft", 10010, 100, 10));
+warehouse.add(new Product("körte", "körte kft", 10210, 110, 15));
+warehouse.add(new Product("narancs", "narancs kft", 10410, 120, 13));
+warehouse.add(new Product("másmilyen alma", "alma kft", 10510, 90, 12));
+
