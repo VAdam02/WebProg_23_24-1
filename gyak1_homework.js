@@ -178,7 +178,7 @@ console.log("27.a. feladat");
 
 //TODO solve here
 
-console.assert(compareArrays(first10Chars(movies), ['Avatar (2009)', 'Titanic (1997)', 'Star Wars: Episode VII - The Force Awakens (2015)', 'Avengers: Endgame (2019)', 'Jurassic World (2015)', 'The Lion King (1994)', 'The Dark Knight (2008)']), "first10Chars(movies) should be ['Avatar (2009)', 'Titanic (1997)', 'Star Wars: Episode VII - The Force Awakens (2015)', 'Avengers: Endgame (2019)', 'Jurassic World (2015)', 'The Lion King (1994)', 'The Dark Knight (2008)']");
+console.assert(compareArrays(first10Chars(movies), ['Avatar (2009)', 'Titanic (1997)', 'Star Wars: (2015)', 'Avengers:  (2019)', 'Jurassic W (2015)', 'The Lion K (1994)', 'The Dark K (2008)']), "first10Chars(movies) should be ['Avatar (2009)', 'Titanic (1997)', 'Star Wars: (2015)', 'Avengers:  (2019)', 'Jurassic W (2015)', 'The Lion K (1994)', 'The Dark K (2008)']");
 
 //27.b. Listázd ki azokat a filmeket, amelyeknek több rendezője is van
 console.log("27.b. feladat");
