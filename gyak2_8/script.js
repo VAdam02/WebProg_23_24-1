@@ -8,6 +8,18 @@ addEventListener("load", (event) =>
     increaseCount.addEventListener("change", printIncreasing);
 
     multiplicationTableNum.addEventListener("change", printMultiplicationTable);
+
+    circleRadius.addEventListener("change", calculateCircle);
+
+    loadImageButton.addEventListener("click", loadImage);
+
+    plus.addEventListener("click", () => count(1));
+    minus.addEventListener("click", () => count(-1));
+
+    plus.addEventListener("mousedown", () => startCount(1));
+    minus.addEventListener("mousedown", () => startCount(-1));
+    plus.addEventListener("mouseup", stopCount);
+    minus.addEventListener("mouseup", stopCount);
 });
 
 function changeText() {
@@ -59,4 +71,60 @@ function printMultiplicationTable()
         output += `</tr>`;
     }
     multiplicationTable.innerHTML = output;
+}
+
+function calculateCircle()
+{
+    let radius = circleRadius.value;
+
+    if (!radius.match(/^\d+$/)) return;
+
+    let kerulet = 2 * radius * Math.PI;
+    let terulet = radius * radius * Math.PI;
+
+    korKerulet.innerHTML = kerulet;
+    korTerulet.innerHTML = terulet;
+}
+
+function loadImage()
+{
+    let url = imageURL.value;
+
+    if (!url.match(/^https?:\/\/.+\.(png|jpg|jpeg|gif)$/i)) return;
+
+    image.src = url;
+}
+
+let number = 0;
+let interval = null;
+let delay = 0;
+
+function count(num)
+{
+    number += num;
+    counter.value = number;
+}
+
+function startCount(num)
+{
+    clearInterval(interval);
+    delay = 5;
+    interval = setInterval(() => tickCount(num), 100);
+}
+
+function stopCount()
+{
+    clearInterval(interval);
+}
+
+function tickCount(n)
+{
+    if (delay === 0)
+    {
+        count(n);
+    }
+    else
+    {
+        delay--;
+    }
 }
