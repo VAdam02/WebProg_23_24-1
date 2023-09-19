@@ -86,3 +86,48 @@ function printMultiplicationTable2()
         szorzotabla.appendChild(tr);
     }
 }
+
+
+let counter = 0;
+szamlaloCount.value = counter;
+
+function count(n)
+{
+    counter += n;
+    szamlaloCount.value = counter;
+}
+
+plus.addEventListener("click", () => count(1));
+minus.addEventListener("click", () => count(-1));
+
+plus.addEventListener("mousedown", () => startCount(1));
+minus.addEventListener("mousedown", () => startCount(-1));
+plus.addEventListener("mouseup", stopCount);
+minus.addEventListener("mouseup", stopCount);
+
+let interval = null;
+let delay = 0;
+
+function startCount(n)
+{
+    clearInterval(interval);
+    delay = 5;
+    interval = setInterval(() => tickCount(n), 100);
+}
+
+function stopCount()
+{
+    clearInterval(interval);
+}
+
+function tickCount(n)
+{
+    if (delay === 0)
+    {
+        count(n);
+    }
+    else
+    {
+        delay--;
+    }
+}
