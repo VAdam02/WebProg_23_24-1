@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /*create a bubble for the task with rounded corners and light background and make it fancy*/
+        .task {
+            border-radius: 10px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+        }
+
+        /*make the first paragraph of the task module the title of the task so highlight it accordingly with a light but darker background and make it fancy*/
+        .task > p:first-child {
+            background-color: #e6e6e6;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="task">
+        <p>Hello world feladat</p>
+        
+        <p id="helloWorld">Szia</p>    
+    </div>
+
+    <div class="task">
+        <p>Hello world növekvő feladat</p>
+        
+        <input type="text" id="helloWorldCount">
+
+        <div id="helloWorldNovekvo">
+
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
