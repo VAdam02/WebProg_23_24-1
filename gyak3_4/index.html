@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .task {
+            border-radius: 10px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+        }
+
+        .task > p:first-child {
+            background-color: #e6e6e6;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+        }
+    </style>
+
+
+    <script src="script.js"></script>
+</head>
+<body>
+    
+    <div id="alma"></div>
+    
+
+
+    <button id="basicEvent">Basic event</button>
+
+    <div class="task">
+        <p>Delegálás</p>
+
+        <p id="loremIpsum">Lorem ipsum <a href="http://translate.google.com/#la/hu/dolor">dolor</a> sit amet, <span>consectetur</span> adipiscing elit. <span>Proin ut faucibus justo.</span> Nullam vulputate iaculis blandit. Sed at placerat mi. Cras volutpat, urna sed accumsan dapibus, <a href="http://www.libero.hu">libero</a> massa cursus felis, eget consectetur libero orci ut sem. Fusce id mollis nibh. In vulputate et turpis eu semper. Sed pharetra tincidunt velit. Fusce pharetra eros vitae placerat luctus. <span>Fusce cursus ultrices tellus et lobortis.</span></p>
+    </div>
+
+
+    <div class="task">
+        <p>Link szűrés</p>
+
+        <a href="http://www.elte.hu">ELTE honlapja</a><br>
+        <a href="http://webprogramozas.inf.elte.hu">Webprogramozás szerver</a><br>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript referencia</a><br>
+        <a href="http://jsfiddle.net/">JavaScript homokozó</a><br>
+    </div>
+
+    <div class="task">
+        <p>Csak szám szövegdoboz</p>
+
+        <input type="text" class="onlyNumber" placeholder="Csak számokat tartalmazhat">
+        <input type="text" class="onlyNumber" placeholder="Csak számokat tartalmazhat">
+        <input type="text" placeholder="Nem csak számokat tartalmazhat">
+    </div>
+
+    <div class="task">
+        <p>Katt stat</p>
+
+        <input type="text" readonly id="avgClickDistanceBox">
+        <input type="text" readonly id="avgClickTimeBox">
+    </div>
+</body>
+</html>
