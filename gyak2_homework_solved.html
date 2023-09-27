@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="gyak2_homework_solved.js"></script>
+
+    <style>
+        .task {
+            border-radius: 10px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+        }
+
+        .task > p:first-child {
+            background-color: #e6e6e6;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="task">
+        <p>Számláló</p>
+
+        <p id="counterP">0</p>
+    </div>
+
+    <div class="task">
+        <p>Kör kerület terület</p>
+
+        <input type="text" id="circleRadius" placeholder="Radius">
+        <button id="circleAreaButton">Kör terület kiszámolása</button>
+
+        <p id="circlePerimeterP">0</p>
+        <p id="circleAreaP">0</p>
+    </div>
+
+    <div class="task">
+        <p>Táblázat</p>
+
+        <input type="text" id="tableInput1" placeholder="1. oszlop">
+        <input type="text" id="tableInput2" placeholder="2. oszlop">
+        <input type="text" id="tableInput3" placeholder="3. oszlop">
+        <button id="tableButton">Hozzáadás</button>
+
+        <table id="table">
+            <tr>
+                <th>1. oszlop</th>
+                <th>2. oszlop</th>
+                <th>3. oszlop</th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="task">
+        <p>Könyvtári nyilvántartás</p>
+
+        <input type="text" id="authorInput" placeholder="Szerző">
+        <input type="text" id="titleInput" placeholder="Cím">
+        <input type="text" id="yearInput" placeholder="Év">
+        <input type="text" id="publisherInput" placeholder="Kiadó">
+        <input type="text" id="isbnInput" placeholder="ISBN">
+        <button id="bookButton">Hozzáadás</button></br>
+
+        <input type="text" id="yearSearchInput" placeholder="Keresés évszám alapján">
+        <button id="yearSearchButton">Keresés</button>
+        <p id="yearSearchOutput"></p>
+
+        <select id="publisherSelect"></select>
+        <table id="publisherTable">
+            <tr>
+                <th>Szerző</th>
+                <th>Cím</th>
+                <th>Év</th>
+                <th>Kiadó</th>
+                <th>ISBN</th>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
