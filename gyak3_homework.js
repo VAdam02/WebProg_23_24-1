@@ -42,3 +42,11 @@ console.log("4. feladat");
 console.log("5. feladat");
 
 //TODO SOLVE HERE
+
+
+
+//UTILS
+function compareArrays(arr1, arr2)
+{
+    return arr1.length === arr2.length && arr1.every((value, index) => value === arr2[index]);
+}
