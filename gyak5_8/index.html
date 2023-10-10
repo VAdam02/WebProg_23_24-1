@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="script.js"></script>
+</head>
+<body>
+    <form id="newRowForm">
+        <input type="text" placeholder="Tárgy neve" name="subjectName" required>
+        <input type="text" placeholder="Tárgy kódja" name="subjectCode" required>
+        <input type="text" placeholder="Tárgycsoport neve" name="subjectGroupName" required>
+        <input type="text" placeholder="Ajánlott félév" name="recommendedSemester">
+        <input type="text" placeholder="Kredit" name="credit" required>
+        <input type="text" placeholder="Tárgytípus" name="subjectType" required>
+        <input type="text" placeholder="Megjegyzés" name="notes">
+        <input type="text" placeholder="Félév min" name="semesterMin">
+        <input type="text" placeholder="Félév max" name="semesterMax">
+        <input type="checkbox" placeholder="Teljesített" name="completed"> Teljesített
+        <input type="checkbox" placeholder="Felvett" name="taken"> Felvett
+        <button type="button" onclick="addTableRow(this.form)">Add Row</button>
+    </form>
+    <table>
+        <thead><tr><th>1</th><th>2</th></tr></thead>
+        <tbody>
+            <tr><td>a</td><td>b</td></tr>
+            <tr><td>c</td><td>d</td></tr>
+        </tbody>
+    </table>
+    <table border='1' id="targyak">
+        <thead>
+            <tr><th>Tárgy neve</th><th>Tárgy kódja</th><th>Tárgycsoport neve</th><th>Sorszám</th><th>Ajánlott félév</th><th>Kredit</th><th>Tárgytípus</th><th>Megjegyzés</th><th>Félév min</th><th>Félév max</th><th>Teljesített</th><th>Felvett</th><th>Tárgyfelvétel</th>		</tr>
+        </thead>
+        <tbody>
+            <tr><td>Típuselmélet Gy</td><td>IP-18KVSZTMG</td><td>Számítástudomány ismeretkör (B)</td><td></td><td>3</td><td>3</td><td>Kötelezően választható</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Diszkrét matematika II. Gy</td><td>IP-18bDM2G</td><td>Kötelező tárgyak (B szakirány)</td><td></td><td>3</td><td>3</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Diszkrét matematika I. Gy</td><td>IP-18DM1G</td><td>Törzsanyag</td><td></td><td>2</td><td>3</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Analízis I. Ea</td><td>IP-18AN1E</td><td>Törzsanyag</td><td></td><td>2</td><td>2</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Programozáselmélet Ea</td><td>IP-18bPREE</td><td>Kötelező tárgyak (B szakirány)</td><td></td><td>3</td><td>2</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Operációs rendszerek Ea+Gy</td><td>IP-18OPREG</td><td>Törzsanyag</td><td></td><td>4</td><td>3</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Imperatív programozás EA+GY</td><td>IP-18IMPROGEG</td><td>Törzsanyag</td><td></td><td>1</td><td>5</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Diszkrét matematika II. Ea</td><td>IP-18bDM2E</td><td>Kötelező tárgyak (B szakirány)</td><td></td><td>3</td><td>2</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Haladó Java Ea+Gy</td><td>IP-18KVIHJEG</td><td>Informatika ismeretkör (B)</td><td></td><td></td><td>5</td><td>Kötelezően választható</td><td></td><td>4</td><td>6</td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Jogi ismeretek Ea</td><td>IP-18JIE</td><td>Törzsanyag</td><td></td><td></td><td>3</td><td>Kötelező</td><td></td><td>1</td><td>6</td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Webprogramozás Ea+Gy</td><td>IP-18KVWEBPROGEG</td><td>Informatika ismeretkör (B)</td><td></td><td>3</td><td>4</td><td>Kötelezően választható</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Algoritmusok és adatszerkezetek II. Ea</td><td>IP-18AA2E</td><td>Törzsanyag</td><td></td><td>3</td><td>2</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Algoritmusok és adatszerkezetek II Gy</td><td>IP-18AA2G</td><td>Törzsanyag</td><td></td><td>3</td><td>3</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>GPU programozás Ea+Gy</td><td>IP-18KVIGPUEG</td><td>Informatika ismeretkör (B)</td><td></td><td></td><td>3</td><td>Kötelezően választható</td><td></td><td>3</td><td>5</td><td></td><td>Taken</td><td>Felvesz</td></tr>
+            <tr><td>Innovatív vállalkozás menedzsment EA+GY</td><td>IP-18IVMEG</td><td>Törzsanyag</td><td></td><td></td><td>3</td><td>Kötelező</td><td></td><td>1</td><td>6</td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Adatbázisok I. Ea</td><td>IP-18AB1E</td><td>Törzsanyag</td><td></td><td>4</td><td>2</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Big Data architektúrák és elemző módszerek Ea</td><td>IP-18KVIBDAE</td><td>Informatika ismeretkör (B)</td><td></td><td>5</td><td>2</td><td>Kötelezően választható</td><td></td><td></td><td></td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Számítógépes grafika Ea</td><td>IP-18KVISZGE</td><td>Informatika ismeretkör (B)</td><td></td><td></td><td>2</td><td>Kötelezően választható</td><td></td><td>3</td><td>5</td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Programozási nyelvek (C++)</td><td>IP-18KVPNY1EG</td><td>Informatika ismeretkör (B)</td><td></td><td></td><td>5</td><td>Kötelezően választható</td><td></td><td>3</td><td>5</td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Mesterséges intelligencia Ea</td><td>IP-18MIAE</td><td>Törzsanyag</td><td></td><td>5</td><td>3</td><td>Kötelező</td><td></td><td></td><td></td><td></td><td>Taken</td><td>Felvesz</td></tr>
+            <tr><td>Numerikus módszerek I. Ea</td><td>IP-18bNM1E</td><td>Kötelező tárgyak (B szakirány)</td><td></td><td>4</td><td>2</td><td>Kötelező</td><td></td><td></td><td></td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Típuselmélet Ea</td><td>IP-18KVSZTME</td><td>Számítástudomány ismeretkör (B)</td><td></td><td>3</td><td>2</td><td>Kötelezően választható</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Programozás EA+GY</td><td>IP-18PROGEG</td><td>Törzsanyag</td><td></td><td>1</td><td>6</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Bevezetés a gépi tanulásba Ea</td><td>IP-18KVSZBGTE</td><td>Számítástudomány ismeretkör (B)</td><td></td><td>3</td><td>2</td><td>Kötelezően választható</td><td></td><td></td><td></td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Analízis II Ea</td><td>IP-18bAN2E</td><td>Kötelező tárgyak (B szakirány)</td><td></td><td>3</td><td>2</td><td>Kötelező</td><td></td><td></td><td></td><td></td><td>Taken</td><td>Felvesz</td></tr>
+            <tr><td>Programozáselmélet Gy</td><td>IP-18bPREG</td><td>Kötelező tárgyak (B szakirány)</td><td></td><td>3</td><td>3</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Full stack webprogramozás Gy</td><td>IP-18KVIFSWPROGG</td><td>Informatika ismeretkör (B)</td><td></td><td></td><td>3</td><td>Kötelezően választható</td><td></td><td>4</td><td>6</td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Big Data architektúrák és elemző módszerek Gy</td><td>IP-18KVIBDAG</td><td>Informatika ismeretkör (B)</td><td></td><td>5</td><td>3</td><td>Kötelezően választható</td><td></td><td></td><td></td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Eseményvezérelt alkalmazások Ea+Gy</td><td>IP-18bEVALKEG</td><td>Kötelező tárgyak (B szakirány)</td><td></td><td>3</td><td>5</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Python</td><td>IP-18KVPYEG</td><td>Informatika ismeretkör (B)</td><td></td><td></td><td>5</td><td>Kötelezően választható</td><td></td><td>3</td><td>6</td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Szerveroldali webprogramozás Ea+Gy</td><td>IP-18KVISZWPROGEG</td><td>Informatika ismeretkör (B)</td><td></td><td></td><td>4</td><td>Kötelezően választható</td><td></td><td>4</td><td>6</td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Funkcionális nyelvek</td><td>IP-18KVFPNYEG</td><td>Informatika ismeretkör (B)</td><td></td><td></td><td>5</td><td>Kötelezően választható</td><td></td><td>4</td><td>6</td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Numerikus algoritmusok Ea+Gy</td><td>IP-18KVMNMALEG</td><td>Számítástudomány ismeretkör (B)</td><td></td><td>5</td><td>4</td><td>Kötelezően választható</td><td></td><td></td><td></td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Numerikus módszerek II. Ea+Gy</td><td>IP-18bNM2EG</td><td>Kötelező tárgyak (B szakirány)</td><td></td><td>5</td><td>3</td><td>Kötelező</td><td></td><td></td><td></td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Alkalmazott adattudomány</td><td>IP-18KVIADSE</td><td>Informatika ismeretkör (B)</td><td></td><td></td><td>2</td><td>Kötelezően választható</td><td></td><td>3</td><td>5</td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Adatbázisok II. Ea</td><td>IP-18bAB2E</td><td>Kötelező tárgyak (B szakirány)</td><td></td><td>5</td><td>2</td><td>Kötelező</td><td></td><td></td><td></td><td></td><td>Taken</td><td>Felvesz</td></tr>
+            <tr><td>Adatbázisok I. Gy</td><td>IP-18AB1G</td><td>Törzsanyag</td><td></td><td>4</td><td>2</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Számításelmélet Gy</td><td>IP-18bSZEG</td><td>Kötelező tárgyak (B szakirány)</td><td></td><td>5</td><td>3</td><td>Kötelező</td><td></td><td></td><td></td><td></td><td>Taken</td><td>Felvesz</td></tr>
+            <tr><td>Többváltozós függvénytan Ea+Gy</td><td>IP-18bTVFTEG</td><td>Kötelező tárgyak (B szakirány)</td><td></td><td>4</td><td>4</td><td>Kötelező</td><td></td><td></td><td></td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Logika Ea</td><td>IP-18KVELE</td><td>Számítástudomány ismeretkör (B)</td><td></td><td>4</td><td>2</td><td>Kötelezően választható</td><td></td><td></td><td></td><td></td><td>Taken</td><td>Felvesz</td></tr>
+            <tr><td>Projekteszközök (Tools of software projects)</td><td>IP-18KVPRJG</td><td>Informatika ismeretkör (B)</td><td></td><td>4</td><td>3</td><td>Kötelezően választható</td><td></td><td></td><td></td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Analízis II. Gy</td><td>IP-18bAN2G</td><td>Kötelező tárgyak (B szakirány)</td><td></td><td>3</td><td>3</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Diszkrét matematika I Ea</td><td>IP-18DM1E</td><td>Törzsanyag</td><td></td><td>2</td><td>2</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Telekommunikációs hálózatok Ea</td><td>IP-18TKHE</td><td>Törzsanyag</td><td></td><td>5</td><td>2</td><td>Kötelező</td><td></td><td></td><td></td><td></td><td>Taken</td><td>Felvesz</td></tr>
+            <tr><td>Konkurens programozás Ea+Gy</td><td>IP-18KPROGEG</td><td>Törzsanyag</td><td></td><td>5</td><td>3</td><td>Kötelező</td><td></td><td></td><td></td><td></td><td>Taken</td><td>Felvesz</td></tr>
+            <tr><td>Analízis I. Gy</td><td>IP-18AN1G</td><td>Törzsanyag</td><td></td><td>2</td><td>3</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Funkcionális programozás EA+GY</td><td>IP-18FUNPEG</td><td>Törzsanyag</td><td></td><td>1</td><td>5</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Számítógépes grafika Gy</td><td>IP-18KVISZGG</td><td>Informatika ismeretkör (B)</td><td></td><td></td><td>3</td><td>Kötelezően választható</td><td></td><td>3</td><td>5</td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Haladó Számítógépes Grafika Ea.</td><td>IP-18KVIHSZGE</td><td>Informatika ismeretkör (B)</td><td></td><td>5</td><td>2</td><td>Kötelezően választható</td><td></td><td></td><td></td><td></td><td>Taken</td><td>Felvesz</td></tr>
+            <tr><td>Egyetemi alapozó és tanulásmódszertani kurzus</td><td>IP-18TMKG</td><td>Törzsanyag</td><td></td><td>1</td><td>1</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Mély neuronhálók algoritmusai és fajtái Ea</td><td>IP-18KVIMNFEG</td><td>Informatika ismeretkör (B)</td><td></td><td>5</td><td>3</td><td>Kötelezően választható</td><td></td><td></td><td></td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Logika Gy</td><td>IP-18KVELG</td><td>Számítástudomány ismeretkör (B)</td><td></td><td>4</td><td>3</td><td>Kötelezően választható</td><td></td><td></td><td></td><td></td><td>Taken</td><td>Felvesz</td></tr>
+            <tr><td>Telekommunikációs hálózatok Gy</td><td>IP-18TKHG</td><td>Törzsanyag</td><td></td><td>5</td><td>3</td><td>Kötelező</td><td></td><td></td><td></td><td></td><td>Taken</td><td>Felvesz</td></tr>
+            <tr><td>Programozási nyelvek Ea+Gy</td><td>IP-18PNYEG</td><td>Törzsanyag</td><td></td><td>2</td><td>6</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>GUI programozás Qt-vel</td><td>IP-18KVIGUIQTEG</td><td>Informatika ismeretkör (B)</td><td></td><td>3</td><td>4</td><td>Kötelezően választható</td><td></td><td></td><td></td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Matematikai alapok GY.</td><td>IP-18MATAG</td><td>Törzsanyag</td><td></td><td>1</td><td>4</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Szakdolgozati konzultáció (Proginf BSc 2018)</td><td>IP-08SZDPIBN18</td><td>Szakdolgozat</td><td></td><td></td><td>20</td><td>Kötelező</td><td></td><td></td><td></td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Kutatásfejlesztési és innovációs labor</td><td>IP-18KVIKFINNL</td><td>Informatika ismeretkör (B)</td><td></td><td></td><td>5</td><td>Kötelezően választható</td><td></td><td>3</td><td>6</td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Web-fejlesztés Ea+Gy</td><td>IP-18WF1EG</td><td>Törzsanyag</td><td></td><td>2</td><td>3</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Számításelmélet Ea</td><td>IP-18bSZEE</td><td>Kötelező tárgyak (B szakirány)</td><td></td><td>5</td><td>2</td><td>Kötelező</td><td></td><td></td><td></td><td></td><td>Taken</td><td>Felvesz</td></tr>
+            <tr><td>Számítógépes rendszerek EA+GY</td><td>IP-18SZGREG</td><td>Törzsanyag</td><td></td><td>1</td><td>5</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Haladó Számítógépes Grafika Gy.</td><td>IP-18KVIHSZGG</td><td>Informatika ismeretkör (B)</td><td></td><td>5</td><td>3</td><td>Kötelezően választható</td><td></td><td></td><td></td><td></td><td>Taken</td><td>Felvesz</td></tr>
+            <tr><td>Adatbázisok II. Gy</td><td>IP-18bAB2G</td><td>Kötelező tárgyak (B szakirány)</td><td></td><td>5</td><td>3</td><td>Kötelező</td><td></td><td></td><td></td><td></td><td>Taken</td><td>Felvesz</td></tr>
+            <tr><td>Osztott rendszerek specifikációja és implementációja Gy</td><td>IP-18KVSZORSIG</td><td>Számítástudomány ismeretkör (B)</td><td></td><td>6</td><td>3</td><td>Kötelezően választható</td><td></td><td></td><td></td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Algoritmusok és adatszerkezetek I. Ea</td><td>IP-18AA1E</td><td>Törzsanyag</td><td></td><td>2</td><td>2</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Kriptográfia és biztonság Ea</td><td>IP-18KVSZKRBE</td><td>Számítástudomány ismeretkör (B)</td><td></td><td>4</td><td>2</td><td>Kötelezően választható</td><td></td><td></td><td></td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Programozási módszertan Ea</td><td>IP-18KVSZPME</td><td>Számítástudomány ismeretkör (B)</td><td></td><td></td><td>2</td><td>Kötelezően választható</td><td></td><td>4</td><td>6</td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Szoftvertechnológia Ea+Gy (T)</td><td>IP-18bSZTEG</td><td>Kötelező tárgyak (B szakirány)</td><td></td><td>4</td><td>5</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Kliensoldali webprogramozás Ea+Gy</td><td>IP-18KVIKWPROGEG</td><td>Informatika ismeretkör (B)</td><td></td><td></td><td>4</td><td>Kötelezően választható</td><td></td><td>4</td><td>6</td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Formális nyelvek és a fordítóprogramok alapjai Ea</td><td>IP-18bFNYFPRE</td><td>Kötelező tárgyak (B szakirány)</td><td></td><td>4</td><td>2</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Számítási modellek Gy</td><td>IP-18KVSZSZMG</td><td>Számítástudomány ismeretkör (B)</td><td></td><td>5</td><td>3</td><td>Kötelezően választható</td><td></td><td></td><td></td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Valószínűségszámítás és statisztika Ea+Gy (T)</td><td>IP-18bVSZEG</td><td>Kötelező tárgyak (B szakirány)</td><td></td><td>4</td><td>4</td><td>Kötelező</td><td></td><td></td><td></td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Numerikus módszerek I</td><td>IP-18bNM1G</td><td>Kötelező tárgyak (B szakirány)</td><td></td><td>4</td><td>3</td><td>Kötelező</td><td></td><td></td><td></td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Webes alkalmazások fejlesztése Ea+Gy</td><td>IP-18KVIWAFEG</td><td>Informatika ismeretkör (B)</td><td></td><td></td><td>3</td><td>Kötelezően választható</td><td></td><td>4</td><td>6</td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Objektumelvű programozás Ea+Gy</td><td>IP-18OEPROGEG</td><td>Törzsanyag</td><td></td><td>2</td><td>6</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Osztott rendszerek specifikációja és implementációja Ea</td><td>IP-18KVSZORSIE</td><td>Számítástudomány ismeretkör (B)</td><td></td><td>6</td><td>2</td><td>Kötelezően választható</td><td></td><td></td><td></td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Formális nyelvek és a fordítóprogramok alapjai Gy</td><td>IP-18bFNYFPRG</td><td>Kötelező tárgyak (B szakirány)</td><td></td><td>4</td><td>3</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+            <tr><td>Kriptográfia és biztonság Gy</td><td>IP-18KVbSZKRBG</td><td>Számítástudomány ismeretkör (B)</td><td></td><td>4</td><td>4</td><td>Kötelezően választható</td><td></td><td></td><td></td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Szoftver mély neuronhálók alkalmazásához Gy</td><td>IP-18KVISZMNAGE</td><td>Informatika ismeretkör (B)</td><td></td><td>4</td><td>4</td><td>Kötelezően választható</td><td></td><td></td><td></td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Számítási modellek Ea</td><td>IP-18KVSZSZME</td><td>Számítástudomány ismeretkör (B)</td><td></td><td>5</td><td>2</td><td>Kötelezően választható</td><td></td><td></td><td></td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Programozási módszertan Gy</td><td>IP-18KVSZPMG</td><td>Számítástudomány ismeretkör (B)</td><td></td><td></td><td>3</td><td>Kötelezően választható</td><td></td><td>4</td><td>6</td><td></td><td></td><td>Felvesz</td></tr>
+            <tr><td>Algoritmusok és adatszerkezetek I Gy</td><td>IP-18AA1G</td><td>Törzsanyag</td><td></td><td>2</td><td>3</td><td>Kötelező</td><td></td><td></td><td></td><td>Completed</td><td></td><td>Felvesz</td></tr>
+        </tbody>
+    </table>
+</body>
+</html>
