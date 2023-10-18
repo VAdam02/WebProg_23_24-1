@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="gyak4_homework_solved.js"></script>
+
+    <style>
+        .task {
+            border-radius: 10px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+        }
+
+        .task > p:first-child {
+            background-color: #e6e6e6;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+        }
+
+        #displayedWord {
+            margin: 10px;
+        }
+
+        #displayedWord > span {
+            margin: 2px;
+        }
+
+        #visualisation > * {
+            display: none;
+        }
+
+        #visualisation .rajzol {
+            display: block;
+            animation: villan 2s 0.2s;
+        }
+            @keyframes villan {
+            0% {
+                stroke: red;
+                stroke-width: 5px;
+            }
+            100% {
+                stroke: black;
+                stroke-width: 1px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="task">
+        <p>Akasztófa</p>
+        <div id="displayedWord"></div>
+        <div id="characters"></div>
+        <button id="newGameButton">Új játék kezdése</button>
+        <p id="tippCountDisplay">0/10</p>
+        <svg id="visualisation" width="200px" height="200px" stroke="black">
+            <line x1="0" y1="99%" x2="100%" y2="99%" />
+            <line x1="20%" y1="99%" x2="20%" y2="5%" />
+            <line x1="20%" y1="5%" x2="60%" y2="5%" />
+            <line x1="60%" y1="5%" x2="60%" y2="20%" />
+            <circle cx="60%" cy="30%" r="10%" fill="none"/>
+            <line x1="60%" y1="40%" x2="60%" y2="70%" />
+            <line x1="40%" y1="50%" x2="60%" y2="50%" />
+            <line x1="60%" y1="50%" x2="80%" y2="50%" />
+            <line x1="60%" y1="70%" x2="50%" y2="90%" />
+            <line x1="60%" y1="70%" x2="70%" y2="90%" />
+        </svg>
+    </div>
+
+</body>
+</html>
