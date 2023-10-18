@@ -1,10 +1,5 @@
 addEventListener('load', () => {
-    let ctx = gameArea.getContext('2d');
-
-    ctx.width = gameArea.width;
-    ctx.height = gameArea.height;
-
-    //IDK(ctx);
+    //IDK(gameArea.getContext('2d'));
 
     game = new FlappyGame(gameArea);
 })
@@ -32,20 +27,29 @@ function IDK(ctx)
     //ctx.stroke();
 }
 
-
+function random(from, to)
+{
+    return Math.floor(Math.random() * (to - from) + from);
+}
 
 class FlappyGame {
     constructor(canvas) {
         this.gameArea = canvas;
         this.ctx = this.gameArea.getContext('2d');
+        this.ctx.width = this.gameArea.width;
+        this.ctx.height = this.gameArea.height;
+        this.state = "playing"
 
-        canvas.addEventListener('click', () => this.jump());
+        this.gapHeight = 75;
 
-        this.fps = 10;
+        this.bird = new Bird(this);
+
+        canvas.addEventListener('click', () => this.bird.jump());
+
+        this.fps = 60;
         this.lastFrame = Date.now();
 
-        this.bird = new Bird();
-        this.pipe = new Pipe();
+        this.pipes = [];
 
         this.nextFrame();
     }
@@ -54,43 +58,54 @@ class FlappyGame {
         if (!this.isReady()) return;
 
         this.bird.update(deltatime);
-        this.pipe.update(deltatime);
+
+        if (this.pipes.length == 0) { this.pipes.push(new Pipe(this, 300, random(this.ctx.height/-2, this.ctx.height/2))); }
+
+        while (this.pipes[this.pipes.length - 1].position[0] < this.bird.position[0] + this.ctx.width)
+        {
+            this.pipes.push(new Pipe(this, this.pipes[this.pipes.length - 1].position[0] + 200, random(this.ctx.height/-2, this.ctx.height/2)));
+        }
+
+        this.pipes.forEach(pipe => pipe.update(deltatime));
     }
 
-    render() {
-        this.ctx.fillStyle = '#79c6d3';
-        this.ctx.fillRect(0, 0, this.ctx.width, this.ctx.height);
+    render(ctx) {
+        ctx.fillStyle = '#79c6d3';
+        ctx.fillRect(0, 0, ctx.width, ctx.height);
 
         if (!this.isReady()) return;
 
         let left = this.bird.position[0] - 100;
 
-        this.bird.render(this.ctx, left, 0, this.ctx.width, this.ctx.height);
-        this.pipe.render(this.ctx, left , 0, this.ctx.width, this.ctx.height);
+        this.bird.render(ctx, left, ctx.height/-2, ctx.width, ctx.height);
+        
+        this.pipes.forEach(pipe => pipe.render(ctx, left, ctx.height/-2, ctx.width, ctx.height))
     }
 
     nextFrame() {
-        this.update((Date.now() - this.lastFrame)/1000);
-        this.render();
-        setTimeout(() => this.nextFrame(), (1000/this.fps) - (Date.now() - this.lastFrame))
+        setTimeout(() => {
+            this.update((Date.now() - this.lastFrame)/1000);
+            this.render(this.ctx);
+            this.nextFrame();
+        }, (1000 / this.fps) - (Date.now() - (this.lastFrame ? this.lastFrame : Date.now())));
         this.lastFrame = Date.now();
     }
 
     isReady() {
-        return this.bird.isReady() && this.pipe.isReady();
+        return this.bird.isReady() && this.pipes.every(pipe => pipe.isReady());
     }
 
-    jump() {
-        this.bird.velocity[1] += 100;
+    GameOver() {
+        this.state = "gameover"
     }
 }
 
 class Bird {
     static texture;
 
-    constructor() {
-        this.waitingFor = []
-        this.textureWidth = 25; //TODO not used
+    constructor(game) {
+        this.game = game;
+        this.width = 25;
 
         this.velocity = [100, 0]
         this.acceleration = [0, -100]
@@ -99,68 +114,104 @@ class Bird {
         if (!Bird.texture) {
             Bird.texture = new Image();
             Bird.texture.src = 'bird.png';
-            this.waitingFor.push(Bird.texture);
-
-            Bird.texture.addEventListener('load', () => {
-                this.waitingFor.splice(this.waitingFor.indexOf(Bird.texture));
-            })
         }
     }
 
     update(deltatime) {
+        if (this.game.state != "playing") return;
+
         this.velocity[0] += this.acceleration[0] * deltatime;
         this.velocity[1] += this.acceleration[1] * deltatime;
 
         this.position[0] += this.velocity[0] * deltatime;
         this.position[1] += this.velocity[1] * deltatime;
 
-        console.log([this.velocity[0], this.velocity[1], this.position[0], this.position[1]])
+        let imgHeight = this.width * Bird.texture.height / Bird.texture.width;
+        if (this.position[1] + imgHeight/2 > this.game.ctx.height/2) this.game.GameOver();
+        if (this.position[1] - imgHeight/2 < this.game.ctx.height/-2) this.game.GameOver();
     }
 
     render(ctx, left, top, width, height) {
         let rotation = Math.atan2(-this.velocity[1], this.velocity[0]);
 
         ctx.save();
-        ctx.translate(this.position[0] - left, top - this.position[1])
+        ctx.translate(this.position[0] - left, (-this.position[1] - top))
         ctx.rotate(rotation);
-        ctx.drawImage(Bird.texture, -Bird.texture.width/2, -Bird.texture.height/2, Bird.texture.width, Bird.texture.height);
+        ctx.drawImage(Bird.texture, this.width/-2, this.width * Bird.texture.height / Bird.texture.width /-2, this.width, this.width * Bird.texture.height / Bird.texture.width)
+
         ctx.restore();
     }
 
     isReady() {
-        return this.waitingFor.length == 0;
+        return Bird.texture.complete;
+    }
+
+    jump() {
+        if (this.game.state != "playing") return;
+
+        this.velocity[1] += 100;
     }
 }
 
 class Pipe {
-    static texture;
+    static pipeTop;
+    static pipeBottom;
 
-    constructor() {
-        this.waitingFor = []
-        this.textureWidth = 25; //TODO not used
+    constructor(game, x, y) {
+        this.game = game;
+        this.width = 25;
 
-        this.position = [200, 0]
+        this.position = [x, y]
 
-        if (!Pipe.texture) {
-            Pipe.texture = new Image();
-            Pipe.texture.src = 'tube.png';
-            this.waitingFor.push(Pipe.texture);
-
-            Pipe.texture.addEventListener('load', () => {
-                this.waitingFor.splice(this.waitingFor.indexOf(Pipe.texture));
-            })
+        if (!Pipe.pipeTop) {
+            Pipe.pipeTop = new Image();
+            Pipe.pipeTop.src = 'tube.png';
+        }
+        if (!Pipe.pipeBottom) {
+            Pipe.pipeBottom = new Image();
+            Pipe.pipeBottom.src = 'tubeLong.png';
         }
     }
 
     isReady() {
-        return this.waitingFor.length == 0;
+        return Pipe.pipeTop.complete && Pipe.pipeBottom.complete;
     }
 
     update(deltatime) {
+        if (this.game.bird.position[0] - this.game.bird.width > this.position[0] + this.width/2) return;
+        if (this.game.bird.position[0] + this.game.bird.width < this.position[0] - this.width/2) return;
 
+        let birdImgHeight = this.game.bird.width * Bird.texture.height / Bird.texture.width;
+        if (!(this.game.bird.position[1] + birdImgHeight/2 > this.position[1] + this.game.gapHeight/2
+           || this.game.bird.position[1] - birdImgHeight/2 < this.position[1] - this.game.gapHeight/2)) return;
+
+        this.game.GameOver();
     }
 
     render(ctx, left, top, width, height) {
-        ctx.drawImage(Pipe.texture, this.position[0] - left, top - this.position[1], Pipe.texture.width, Pipe.texture.height);
+        if (this.position[0] < left - this.width/2) return;
+
+        let imgHeight = this.width * Pipe.pipeTop.height / Pipe.pipeTop.width;
+
+        ctx.save();
+        ctx.translate(this.position[0]-left, (-this.position[1]) - top + this.game.gapHeight/2);
+        ctx.drawImage(Pipe.pipeTop, this.width/-2, 0, this.width, imgHeight);
+        ctx.restore();
+
+        ctx.save();
+        ctx.scale(1, -1);
+        ctx.translate(this.position[0]-left, -((-this.position[1]) - top - this.game.gapHeight/2));
+        ctx.drawImage(Pipe.pipeTop, this.width/-2, 0, this.width, imgHeight);
+        ctx.restore();
+
+        ctx.save();
+        ctx.translate(this.position[0]-left, (-this.position[1]) - top + this.game.gapHeight/2 + imgHeight);
+        ctx.drawImage(Pipe.pipeBottom, this.width/-2, -100, this.width, (this.position[1] - top)-imgHeight/2-this.game.gapHeight);
+
+        console.log((this.position[1]+(height/2)))
+        
+        
+
+        ctx.restore();
     }
 }
