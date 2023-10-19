@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="gyak5_homework_solved.js"></script>
+
+    <style>
+        .task {
+            border-radius: 30px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 0 30px 0 rgba(0,0,0,0.2);
+        }
+
+        .task > p:first-child {
+            background-color: #e6e6e6;
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 0 0 30px 0 rgba(0,0,0,0.2);
+        }
+
+        #otherCanvases {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-content: center;
+            justify-content: space-around;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="task">
+        <p>Pixelart</p>
+
+        <form id="canvasResize">
+            <label for="canvasName">Canvas name:</label>
+            <input type="text" id="canvasName" name="canvasName" value="My canvas">
+            <label for="width">Width:</label>
+            <input type="number" id="canvasWidth" name="width" min="1" max="100" value="10">
+            <label for="height">Height:</label>
+            <input type="number" id="canvasHeight" name="height" min="1" max="100" value="10">
+            <input type="button" id="resizeButton" value="Resize">
+            <input type="button" id="newCanvasButton" value="New canvas">
+            <input type="button" id="saveButton" value="Save">
+            <input type="button" id="loadButton" value="Load">
+        </form>
+        <hr>
+        <div>
+            <table id="colorPicker">
+                <tr>
+                    <td>
+                        <input type="color" value="#000000" id="foreColor">
+                    </td>
+                    <td style="background-color: #4f4fcd;width: 30px;height: 30px;"></td>
+                    <td style="background-color: #4fcdcd;width: 30px;height: 30px;"></td>
+                    <td style="background-color: #4fcd4f;width: 30px;height: 30px;"></td>
+                    <td style="background-color: #cdcd4f;width: 30px;height: 30px;"></td>
+                    <td style="background-color: #cd4f4f;width: 30px;height: 30px;"></td>
+                    <td style="background-color: #cd4fcd;width: 30px;height: 30px;"></td>
+                    <td style="background-color: #1f1f1f;width: 30px;height: 30px;"></td>
+                    <td style="background-color: #454545;width: 30px;height: 30px;"></td>
+                    <td style="background-color: #7a7a7a;width: 30px;height: 30px;"></td>
+                    <td style="background-color: #afafaf;width: 30px;height: 30px;"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="color" value="#ffffff" id="backColor">
+                    </td>
+                    <td style="background-color: #ffffff;width: 30px;height: 30px;"></td>
+                    <td style="background-color: #ffffff;width: 30px;height: 30px;"></td>
+                    <td style="background-color: #ffffff;width: 30px;height: 30px;"></td>
+                    <td style="background-color: #ffffff;width: 30px;height: 30px;"></td>
+                    <td style="background-color: #ffffff;width: 30px;height: 30px;"></td>
+                    <td style="background-color: #ffffff;width: 30px;height: 30px;"></td>
+                    <td style="background-color: #ffffff;width: 30px;height: 30px;"></td>
+                    <td style="background-color: #ffffff;width: 30px;height: 30px;"></td>
+                    <td style="background-color: #ffffff;width: 30px;height: 30px;"></td>
+                    <td style="background-color: #ffffff;width: 30px;height: 30px;"></td>
+                </tr>
+            </table>
+
+            <table id="canvas"></table>
+
+            <div id="otherCanvases"></div>
+        </div>
+    </div>
+</body>
+</html>
