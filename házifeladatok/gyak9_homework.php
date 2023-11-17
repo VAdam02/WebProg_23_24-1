@@ -23,10 +23,10 @@ A beérkezett névjegyzékeket tárold el egy json fájlban (ne felejtd el a fá
 Csinálj egy keresőmezőt, ahol telefonszám alapján lehessen keresni a névjegyzékek között és írd ki a névjegyzék adatait
 
 6. feladat (2 pont)
-localhost:3000/index.php?user=Anna esetén a név alapértelmezett értéke legyen Anna, de a felhasználó módosíthassa azt
+localhost:3000/index.php?user=Kis%20Anna esetén a név alapértelmezett értéke legyen Kis Anna, de a felhasználó módosíthassa azt
 
 7.a feladat (1 pont)
-localhost:3000/index.php?user=Anna GET kérés esetén listázd ki egy táblázatban ennek a felhasználónak a nevével leadott névjegyzékeket
+localhost:3000/index.php?user=Kis%20Anna GET kérés esetén listázd ki egy táblázatban ennek a felhasználónak a nevével leadott névjegyzékeket
 7.b feladat (1 pont)
 Minden egyes sor mellett jelenjen meg egy törlés gomb, amivel törölni lehet az adott névjegyzéket
 
