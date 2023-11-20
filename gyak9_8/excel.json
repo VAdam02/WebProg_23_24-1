@@ -1,0 +1,116 @@
+[
+    {
+        "id": 0,
+        "nev": "Kis P\u00e9ter",
+        "kor": 24,
+        "ferfi": true
+    },
+    {
+        "id": 1,
+        "nev": "Kov\u00e1cs N\u00f3ri",
+        "kor": 12,
+        "ferfi": false
+    },
+    {
+        "id": 2,
+        "nev": "Nagy \u00c1d\u00e1m",
+        "kor": 48,
+        "ferfi": true
+    },
+    {
+        "id": 3,
+        "nev": "Kiss Vir\u00e1g",
+        "kor": 32,
+        "ferfi": false
+    },
+    {
+        "id": 4,
+        "nev": "Nagy \u00c9va",
+        "kor": 14,
+        "ferfi": false
+    },
+    {
+        "id": 5,
+        "nev": "Kis G\u00e1bor",
+        "kor": 22,
+        "ferfi": true
+    },
+    {
+        "id": 6,
+        "nev": "Kov\u00e1cs \u00c9va",
+        "kor": 72,
+        "ferfi": true
+    },
+    {
+        "id": 12,
+        "nev": "Kov\u00e1cs Pista",
+        "kor": "49",
+        "ferfi": true
+    },
+    {
+        "id": 16,
+        "nev": "Asd",
+        "kor": "",
+        "ferfi": false
+    },
+    {
+        "id": 17,
+        "nev": "",
+        "kor": "1",
+        "ferfi": false
+    },
+    {
+        "id": 18,
+        "nev": "",
+        "kor": "1",
+        "ferfi": false
+    },
+    {
+        "id": 19,
+        "nev": "",
+        "kor": "1",
+        "ferfi": false
+    },
+    {
+        "id": 20,
+        "nev": "",
+        "kor": "1",
+        "ferfi": false
+    },
+    {
+        "id": 21,
+        "nev": "",
+        "kor": "1",
+        "ferfi": false
+    },
+    {
+        "id": 22,
+        "nev": "",
+        "kor": "1",
+        "ferfi": false
+    },
+    {
+        "id": 23,
+        "nev": "",
+        "kor": "1",
+        "ferfi": false
+    },
+    {
+        "id": 24,
+        "nev": "",
+        "kor": "1",
+        "ferfi": false
+    },
+    {
+        "id": 25,
+        "nev": "Anna",
+        "kor": "15",
+        "ferfi": false
+    },
+    {
+        "id": 26,
+        "nev": "Anna",
+        "kor": "15",
+        "ferfi": false
+    }
+]

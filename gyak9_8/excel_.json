@@ -1,0 +1,56 @@
+[
+    {
+        "id": 0,
+        "nev": "Kis Péter",
+        "kor": 24,
+        "ferfi": true
+    },
+    {
+        "id": 1,
+        "nev": "Kovács Nóri",
+        "kor": 12,
+        "ferfi": false
+    },
+    {
+        "id": 2,
+        "nev": "Nagy Ádám",
+        "kor": 48,
+        "ferfi": true
+    },
+    {
+        "id": 3,
+        "nev": "Kiss Virág",
+        "kor": 32,
+        "ferfi": false
+    },
+    {
+        "id": 4,
+        "nev": "Nagy Éva",
+        "kor": 14,
+        "ferfi": false
+    },
+    {
+        "id": 5,
+        "nev": "Kis Gábor",
+        "kor": 22,
+        "ferfi": true
+    },
+    {
+        "id": 6,
+        "nev": "Kovács Éva",
+        "kor": 72,
+        "ferfi": true
+    },
+    {
+        "id": 7,
+        "nev": "Nagy Péter",
+        "kor": 36,
+        "ferfi": true
+    },
+    {
+        "id": 8,
+        "nev": "Kiss Ádám",
+        "kor": 42,
+        "ferfi": true
+    }
+]
