@@ -1,0 +1,14 @@
+[
+    {
+        "id": 0,
+        "name": "Hűtő",
+        "price": 50000,
+        "description": "Ez egy hűtő"
+    },
+    {
+        "id": 1,
+        "name": "Mosógép",
+        "price": 100000,
+        "description": "Ez egy mosógép"
+    }
+]
