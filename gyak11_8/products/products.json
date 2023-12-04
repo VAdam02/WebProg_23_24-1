@@ -1,0 +1,65 @@
+[
+    {
+        "id": 0,
+        "name": "Roborock S8 Pro Ultra fehér",
+        "description": "Robotporszívó felmosóval - alkalmas minden padlótípushoz, funkciói felszívás, mosható szűrő és EPA E11 szűrő, automata feltöltés, ütközésérzékelő, takarítás folytatása újratöltés esetén, automata kiürítés, több helyiségbeni porszívózás, lépcsőről való leesés elleni érzékelő, takarítandó helyiség meghatározása, késleltetett tisztítás funkció és időzíthető takarítás, puhított kerekek és haj rácsavarodással szembeni ellenállás, vezérlés hanggal, mobilalkalmazással, a készüléken, portartály térfogata 0,35 l, gyűjtőtartály űrtartalma 0,35 l, 1 oldalkefe, 2 cm magas szintkülönbséget is leküzd, LiDAR navigáció, Li-ion akkumulátor, működési idő 180 perc, zajszint 68,5 dB, kompatibilitás Amazon Alexa, Google Assistant, Wi-Fi, 69 W teljesítmény, mérete 9,5 × 35 × 35,3 cm (Ma×Sz×Mé), tömege 4,8 kg, akkumulátor, töltő adapter, töltőállomás és tápkábel a csomag része, fehér kivitel",
+        "price": 529990,
+        "images": ["ROBRV668.webp", "ROBRV675.webp"],
+        "category": "robotporszívó",
+        "stock": 5
+    },
+    {
+        "id": 1,
+        "name": "Xbox Series X + Diablo IV",
+        "description": "Konzol - tévéhez, SSD 1024 GB, Blu-ray (4K), 4K felbontású játékok támogatása, magyar menüvel , 1× kontroller, Diablo IV, sorozat: Diablo, fekete kivitel",
+        "price": 169890,
+        "images": ["MXO001s.webp", "MXO001s1tb.webp", "MXO001a.webp"],
+        "category": "játékkonzol",
+        "stock": 10
+    },
+    {
+        "id": 2,
+        "name": "LEGO® Technic McLaren Formula 1™ versenyautó 42141",
+        "description": "LEGO - felnőtt, ajánlott 18 éves kortól, LEGO® Technic sorozat, megjelenés éve 2022, a dobozban 1434 db építőelem van",
+        "price": 62290,
+        "images": ["LO42141.webp"],
+        "category": "játék",
+        "stock": 0
+    },
+    {
+        "id": 3,
+        "name": "Xbox Series S (500 GB) + 3M Xbox Game Pass Ultimate",
+        "description": "Konzol - tévéhez, SSD 512 GB, mechanika nélkül, magyar menüvel , 1× kontroller, sorozat: Xbox, fehér kivitel",
+        "price": 93890,
+        "images": ["MXO001shb1.webp", "MXO001s1tb (1).webp", "MXO001a (1).webp"],
+        "category": "játékkonzol",
+        "stock": 3
+    },
+    {
+        "id": 4,
+        "name": "Samsung 870 EVO 1TB",
+        "description": "SSD meghajtó - 2,5\", SATA III, TLC (Triple-Level Cell), 600 TBW elméleti élettartam",
+        "price": 28490,
+        "images": ["SAS013g5.webp"],
+        "category": "pc",
+        "stock": 20
+    },
+    {
+        "id": 5,
+        "name": "Apple Pencil (1. generációs) 2022",
+        "description": "Érintőceruza - tablethez, aktív, hegy anyaga műanyag, Bluetooth és Palm rejection, töltés lightning csatlakozó, alkalmas Apple iPad 10.9\" 2022 (10th gen), iPad 10.2\" 2019 (7th gen), iPad 10.2\" 2020 (8th gen), iPad 10.2\" 2021 (9th gen), iPad 9.7\" 2018 (6th gen), iPad Air 10.5\" 2019 (3rd gen), iPad Mini 7,9\" 2019 (5th gen), iPad Pro 10.5\" és iPad Pro 12.9\" 2017 (2nd gen)",
+        "price": 45790,
+        "images": ["JA905l12.webp"],
+        "category": "mobil",
+        "stock": 2
+    },
+    {
+        "id": 6,
+        "name": "MAKITA E-10883 221 db-os szerszámkészlet",
+        "description": "Krova készlet - a 221 darabos készlet tartalma: kombinált kulcsok, imbuszkulcsok, dugókulcsok, gyertyakulcsok, négyszögletű hosszabbító, hatszögletű bitek, mágneses tartó, négyszögletű fogantyú, négyszögletű adapterek, csuklók, keresztfogantyú, kulcsok, koffer mérete: 47×10×40 mm",
+        "price": 44990,
+        "images": ["MAKInar120.webp"],
+        "category": "szerszám",
+        "stock": 10
+    }
+]
