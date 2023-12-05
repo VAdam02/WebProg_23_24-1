@@ -1,0 +1,100 @@
+.flex-container {
+    display: flex;
+}
+
+.flex-container.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-container > .flex-fill {
+    flex: 1 1 auto;
+}
+
+.flex-container > .flex-col1 {
+    min-width: 8.3333333333%;
+    width: 8.3333333333%;
+}
+
+.flex-container > .flex-col2 {
+    min-width: 16.6666666667%;
+    width: 16.6666666667%;
+}
+
+.flex-container > .flex-col3 {
+    min-width: 25%;
+    width: 25%;
+}
+
+.flex-container > .flex-col4 {
+    min-width: 33.3333333333%;
+    width: 33.3333333333%;
+}
+
+.flex-container > .flex-col5 {
+    min-width: 41.6666666667%;
+    width: 41.6666666667%;
+}
+
+.flex-container > .flex-col6 {
+    min-width: 50%;
+    width: 50%;
+}
+
+.flex-container > .flex-col7 {
+    min-width: 58.3333333333%;
+    width: 58.3333333333%;
+}
+
+.flex-container > .flex-col8 {
+    min-width: 66.6666666667%;
+    width: 66.6666666667%;
+}
+
+.flex-container > .flex-col9 {
+    min-width: 75%;
+    width: 75%;
+}
+
+.flex-container > .flex-col10 {
+    min-width: 83.3333333333%;
+    width: 83.3333333333%;
+}
+
+.flex-container > .flex-col11 {
+    min-width: 91.6666666667%;
+    width: 91.6666666667%;
+}
+
+.flex-container > .flex-col12 {
+    min-width: 100%;
+    width: 100%;
+}
+
+.flex-container > * {
+    align-items: center;
+}
+
+.flex-container > .flex-element > {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.flex-container.flex-left {
+    justify-content: flex-start;
+}
+
+.flex-container.flex-middle {
+    justify-content: center;
+}
+
+.flex-container.flex-right {
+    justify-content: flex-end;
+}
+
+.flex-container.flex-justify {
+    justify-content: space-around;
+}
+
+.flex-container.flex-center {
+    align-items: center;
+}
